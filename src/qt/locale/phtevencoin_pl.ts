@@ -2727,8 +2727,8 @@
         <translation>Błąd: Znaleziono nieprawidłowy argument -tor, użyj -onion.</translation>
     </message>
     <message>
-        <source>Fee (in BTC/kB) to add to transactions you send (default: %s)</source>
-        <translation>Prowizja (w BTC za kB) dodawana do wysyłanej transakcji (domyślnie: %s)</translation>
+        <source>Fee (in PHC/kB) to add to transactions you send (default: %s)</source>
+        <translation>Prowizja (w PHC za kB) dodawana do wysyłanej transakcji (domyślnie: %s)</translation>
     </message>
     <message>
         <source>Information</source>

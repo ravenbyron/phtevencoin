@@ -437,10 +437,10 @@ Then when building, override the remote URLs that gbuild would otherwise pull fr
 cd /some/root/path/
 git clone https://github.com/phtevencoin/phtevencoin-detached-sigs.git
 
-BTCPATH=/some/root/path/phtevencoin.git
+PHCPATH=/some/root/path/phtevencoin.git
 SIGPATH=/some/root/path/phtevencoin-detached-sigs.git
 
-./bin/gbuild --url phtevencoin=${BTCPATH},signature=${SIGPATH} ../phtevencoin/contrib/gitian-descriptors/gitian-win-signer.yml
+./bin/gbuild --url phtevencoin=${PHCPATH},signature=${SIGPATH} ../phtevencoin/contrib/gitian-descriptors/gitian-win-signer.yml
 ```
 
 Signing externally

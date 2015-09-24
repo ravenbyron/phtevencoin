@@ -17,9 +17,9 @@ PhtevencoinUnits::PhtevencoinUnits(QObject *parent):
 QList<PhtevencoinUnits::Unit> PhtevencoinUnits::availableUnits()
 {
     QList<PhtevencoinUnits::Unit> unitlist;
-    unitlist.append(BTC);
-    unitlist.append(mBTC);
-    unitlist.append(uBTC);
+    unitlist.append(PHC);
+    unitlist.append(mPHC);
+    unitlist.append(uPHC);
     return unitlist;
 }
 
@@ -27,9 +27,9 @@ bool PhtevencoinUnits::valid(int unit)
 {
     switch(unit)
     {
-    case BTC:
-    case mBTC:
-    case uBTC:
+    case PHC:
+    case mPHC:
+    case uPHC:
         return true;
     default:
         return false;
@@ -40,9 +40,9 @@ QString PhtevencoinUnits::name(int unit)
 {
     switch(unit)
     {
-    case BTC: return QString("BTC");
-    case mBTC: return QString("mBTC");
-    case uBTC: return QString::fromUtf8("μBTC");
+    case PHC: return QString("PHC");
+    case mPHC: return QString("mPHC");
+    case uPHC: return QString::fromUtf8("μPHC");
     default: return QString("???");
     }
 }
@@ -51,9 +51,9 @@ QString PhtevencoinUnits::description(int unit)
 {
     switch(unit)
     {
-    case BTC: return QString("Phtevencoins");
-    case mBTC: return QString("Milli-Phtevencoins (1 / 1" THIN_SP_UTF8 "000)");
-    case uBTC: return QString("Micro-Phtevencoins (1 / 1" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
+    case PHC: return QString("Phtevencoins");
+    case mPHC: return QString("Milli-Phtevencoins (1 / 1" THIN_SP_UTF8 "000)");
+    case uPHC: return QString("Micro-Phtevencoins (1 / 1" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
     default: return QString("???");
     }
 }
@@ -62,9 +62,9 @@ qint64 PhtevencoinUnits::factor(int unit)
 {
     switch(unit)
     {
-    case BTC:  return 100000000;
-    case mBTC: return 100000;
-    case uBTC: return 100;
+    case PHC:  return 100000000;
+    case mPHC: return 100000;
+    case uPHC: return 100;
     default:   return 100000000;
     }
 }
@@ -73,9 +73,9 @@ int PhtevencoinUnits::decimals(int unit)
 {
     switch(unit)
     {
-    case BTC: return 8;
-    case mBTC: return 5;
-    case uBTC: return 2;
+    case PHC: return 8;
+    case mPHC: return 5;
+    case uPHC: return 2;
     default: return 0;
     }
 }

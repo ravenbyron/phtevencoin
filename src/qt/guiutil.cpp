@@ -165,7 +165,7 @@ bool parsePhtevencoinURI(const QUrl &uri, SendCoinsRecipient *out)
         {
             if(!i->second.isEmpty())
             {
-                if(!PhtevencoinUnits::parse(PhtevencoinUnits::BTC, i->second, &rv.amount))
+                if(!PhtevencoinUnits::parse(PhtevencoinUnits::PHC, i->second, &rv.amount))
                 {
                     return false;
                 }
@@ -204,7 +204,7 @@ QString formatPhtevencoinURI(const SendCoinsRecipient &info)
 
     if (info.amount)
     {
-        ret += QString("?amount=%1").arg(PhtevencoinUnits::format(PhtevencoinUnits::BTC, info.amount, false, PhtevencoinUnits::separatorNever));
+        ret += QString("?amount=%1").arg(PhtevencoinUnits::format(PhtevencoinUnits::PHC, info.amount, false, PhtevencoinUnits::separatorNever));
         paramCount++;
     }
 

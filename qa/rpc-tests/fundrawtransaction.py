@@ -410,7 +410,7 @@ class RawTransactionsTest(PhtevencoinTestFramework):
         mSigObj = self.nodes[2].addmultisigaddress(2, [addr1Obj['pubkey'], addr2Obj['pubkey']])
 
 
-        # send 1.2 BTC to msig addr
+        # send 1.2 PHC to msig addr
         txId = self.nodes[0].sendtoaddress(mSigObj, 1.2);
         self.sync_all()
         self.nodes[1].generate(1)
