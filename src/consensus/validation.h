@@ -1,10 +1,10 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
-// Copyright (c) 2009-2014 The Bitcoin Core developers
+// Copyright (c) 2009-2014 The Phtevencoin Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOIN_CONSENSUS_VALIDATION_H
-#define BITCOIN_CONSENSUS_VALIDATION_H
+#ifndef PHTEVENCOIN_CONSENSUS_VALIDATION_H
+#define PHTEVENCOIN_CONSENSUS_VALIDATION_H
 
 #include <string>
 
@@ -82,4 +82,4 @@ public:
     std::string GetDebugMessage() const { return strDebugMessage; }
 };
 
-#endif // BITCOIN_CONSENSUS_VALIDATION_H
+#endif // PHTEVENCOIN_CONSENSUS_VALIDATION_H

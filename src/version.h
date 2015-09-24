@@ -1,9 +1,9 @@
-// Copyright (c) 2012-2014 The Bitcoin Core developers
+// Copyright (c) 2012-2014 The Phtevencoin Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOIN_VERSION_H
-#define BITCOIN_VERSION_H
+#ifndef PHTEVENCOIN_VERSION_H
+#define PHTEVENCOIN_VERSION_H
 
 /**
  * network protocol versioning
@@ -37,4 +37,4 @@ static const int MEMPOOL_GD_VERSION = 60002;
 //! "filter*" commands are disabled without NODE_BLOOM after and including this version
 static const int NO_BLOOM_VERSION = 70011;
 
-#endif // BITCOIN_VERSION_H
+#endif // PHTEVENCOIN_VERSION_H

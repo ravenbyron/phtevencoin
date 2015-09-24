@@ -1,10 +1,10 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
-// Copyright (c) 2009-2014 The Bitcoin Core developers
+// Copyright (c) 2009-2014 The Phtevencoin Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOIN_NET_H
-#define BITCOIN_NET_H
+#ifndef PHTEVENCOIN_NET_H
+#define PHTEVENCOIN_NET_H
 
 #include "bloom.h"
 #include "compat.h"
@@ -733,4 +733,4 @@ public:
 
 void DumpBanlist();
 
-#endif // BITCOIN_NET_H
+#endif // PHTEVENCOIN_NET_H

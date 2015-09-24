@@ -1,9 +1,9 @@
-// Copyright (c) 2015 The Bitcoin developers
+// Copyright (c) 2015 The Phtevencoin developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOIN_MEMUSAGE_H
-#define BITCOIN_MEMUSAGE_H
+#ifndef PHTEVENCOIN_MEMUSAGE_H
+#define PHTEVENCOIN_MEMUSAGE_H
 
 #include <stdlib.h>
 

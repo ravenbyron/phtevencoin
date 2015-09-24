@@ -1,0 +1,6 @@
+usr/local/bin/phtevencoin-qt usr/bin
+share/pixmaps/phtevencoin32.xpm usr/share/pixmaps
+share/pixmaps/phtevencoin16.xpm usr/share/pixmaps
+share/pixmaps/phtevencoin128.png usr/share/pixmaps
+debian/phtevencoin-qt.desktop usr/share/applications
+debian/phtevencoin-qt.protocol usr/share/kde4/services/

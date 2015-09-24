@@ -1,9 +1,9 @@
-// Copyright (c) 2014 The Bitcoin Core developers
+// Copyright (c) 2014 The Phtevencoin Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOIN_TIMEDATA_H
-#define BITCOIN_TIMEDATA_H
+#ifndef PHTEVENCOIN_TIMEDATA_H
+#define PHTEVENCOIN_TIMEDATA_H
 
 #include <algorithm>
 #include <assert.h>
@@ -73,4 +73,4 @@ int64_t GetTimeOffset();
 int64_t GetAdjustedTime();
 void AddTimeData(const CNetAddr& ip, int64_t nTime);
 
-#endif // BITCOIN_TIMEDATA_H
+#endif // PHTEVENCOIN_TIMEDATA_H

@@ -1,12 +1,12 @@
 #!/usr/bin/env python2
-# Copyright (c) 2015 The Bitcoin Core developers
+# Copyright (c) 2015 The Phtevencoin Core developers
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-from test_framework.test_framework import BitcoinTestFramework
+from test_framework.test_framework import PhtevencoinTestFramework
 from test_framework.util import *
 
-class DecodeScriptTest(BitcoinTestFramework):
+class DecodeScriptTest(PhtevencoinTestFramework):
     """Tests decoding scripts via RPC command "decodescript"."""
 
     def setup_chain(self):

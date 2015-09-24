@@ -1,12 +1,12 @@
-// Copyright (c) 2009-2013 The Bitcoin Core developers
+// Copyright (c) 2009-2013 The Phtevencoin Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOIN_NETBASE_H
-#define BITCOIN_NETBASE_H
+#ifndef PHTEVENCOIN_NETBASE_H
+#define PHTEVENCOIN_NETBASE_H
 
 #if defined(HAVE_CONFIG_H)
-#include "config/bitcoin-config.h"
+#include "config/phtevencoin-config.h"
 #endif
 
 #include "compat.h"
@@ -216,4 +216,4 @@ bool CloseSocket(SOCKET& hSocket);
 /** Disable or enable blocking-mode for a socket */
 bool SetSocketNonBlocking(SOCKET& hSocket, bool fNonBlocking);
 
-#endif // BITCOIN_NETBASE_H
+#endif // PHTEVENCOIN_NETBASE_H

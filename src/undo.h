@@ -1,10 +1,10 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
-// Copyright (c) 2009-2013 The Bitcoin Core developers
+// Copyright (c) 2009-2013 The Phtevencoin Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOIN_UNDO_H
-#define BITCOIN_UNDO_H
+#ifndef PHTEVENCOIN_UNDO_H
+#define PHTEVENCOIN_UNDO_H
 
 #include "compressor.h" 
 #include "primitives/transaction.h"
@@ -82,4 +82,4 @@ public:
     }
 };
 
-#endif // BITCOIN_UNDO_H
+#endif // PHTEVENCOIN_UNDO_H

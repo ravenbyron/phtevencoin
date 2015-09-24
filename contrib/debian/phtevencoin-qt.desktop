@@ -1,0 +1,12 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Phtevencoin
+Comment=Phtevencoin P2P Cryptocurrency
+Comment[fr]=Phtevencoin, monnaie virtuelle cryptographique pair à pair
+Comment[tr]=Phtevencoin, eşten eşe kriptografik sanal para birimi
+Exec=phtevencoin-qt %u
+Terminal=false
+Type=Application
+Icon=phtevencoin128
+MimeType=x-scheme-handler/phtevencoin;
+Categories=Office;Finance;

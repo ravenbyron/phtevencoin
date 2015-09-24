@@ -1,0 +1,33 @@
+# /etc/conf.d/phtevencoind: config file for /etc/init.d/phtevencoind
+
+# Config file location
+#PHTEVENCOIND_CONFIGFILE="/etc/phtevencoin/phtevencoin.conf"
+
+# What directory to write pidfile to?  (created and owned by $PHTEVENCOIND_USER)
+#PHTEVENCOIND_PIDDIR="/var/run/phtevencoind"
+
+# What filename to give the pidfile
+#PHTEVENCOIND_PIDFILE="${PHTEVENCOIND_PIDDIR}/phtevencoind.pid"
+
+# Where to write phtevencoind data (be mindful that the blockchain is large)
+#PHTEVENCOIND_DATADIR="/var/lib/phtevencoind"
+
+# User and group to own phtevencoind process
+#PHTEVENCOIND_USER="phtevencoin"
+#PHTEVENCOIND_GROUP="phtevencoin"
+
+# Path to phtevencoind executable
+#PHTEVENCOIND_BIN="/usr/bin/phtevencoind"
+
+# Nice value to run phtevencoind under
+#PHTEVENCOIND_NICE=0
+
+# Additional options (avoid -conf and -datadir, use flags above)
+PHTEVENCOIND_OPTS="-disablewallet"
+
+# The timeout in seconds OpenRC will wait for phtevencoind to terminate
+# after a SIGTERM has been raised.
+# Note that this will be mapped as argument to start-stop-daemon's
+# '--retry' option, which means you can specify a retry schedule
+# here. For more information see man 8 start-stop-daemon.
+PHTEVENCOIND_SIGTERM_TIMEOUT=60

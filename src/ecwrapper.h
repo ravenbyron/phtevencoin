@@ -1,9 +1,9 @@
-// Copyright (c) 2009-2014 The Bitcoin Core developers
+// Copyright (c) 2009-2014 The Phtevencoin Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOIN_ECWRAPPER_H
-#define BITCOIN_ECWRAPPER_H
+#ifndef PHTEVENCOIN_ECWRAPPER_H
+#define PHTEVENCOIN_ECWRAPPER_H
 
 #include <cstddef>
 #include <vector>
@@ -37,4 +37,4 @@ public:
     static bool SanityCheck();
 };
 
-#endif // BITCOIN_ECWRAPPER_H
+#endif // PHTEVENCOIN_ECWRAPPER_H

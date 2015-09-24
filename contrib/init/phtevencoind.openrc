@@ -1,0 +1,92 @@
+#!/sbin/runscript
+
+# backward compatibility for existing gentoo layout 
+#
+if [ -d "/var/lib/phtevencoin/.phtevencoin" ]; then
+	PHTEVENCOIND_DEFAULT_DATADIR="/var/lib/phtevencoin/.phtevencoin"
+else
+	PHTEVENCOIND_DEFAULT_DATADIR="/var/lib/phtevencoind"
+fi
+
+PHTEVENCOIND_CONFIGFILE=${PHTEVENCOIND_CONFIGFILE:-/etc/phtevencoin/phtevencoin.conf}
+PHTEVENCOIND_PIDDIR=${PHTEVENCOIND_PIDDIR:-/var/run/phtevencoind}
+PHTEVENCOIND_PIDFILE=${PHTEVENCOIND_PIDFILE:-${PHTEVENCOIND_PIDDIR}/phtevencoind.pid}
+PHTEVENCOIND_DATADIR=${PHTEVENCOIND_DATADIR:-${PHTEVENCOIND_DEFAULT_DATADIR}}
+PHTEVENCOIND_USER=${PHTEVENCOIND_USER:-${PHTEVENCOIN_USER:-phtevencoin}}
+PHTEVENCOIND_GROUP=${PHTEVENCOIND_GROUP:-phtevencoin}
+PHTEVENCOIND_BIN=${PHTEVENCOIND_BIN:-/usr/bin/phtevencoind}
+PHTEVENCOIND_NICE=${PHTEVENCOIND_NICE:-${NICELEVEL:-0}}
+PHTEVENCOIND_OPTS="${PHTEVENCOIND_OPTS:-${PHTEVENCOIN_OPTS}}"
+
+name="Phtevencoin Core Daemon"
+description="Phtevencoin cryptocurrency P2P network daemon"
+
+command="/usr/bin/phtevencoind"
+command_args="-pid=\"${PHTEVENCOIND_PIDFILE}\" \
+		-conf=\"${PHTEVENCOIND_CONFIGFILE}\" \
+		-datadir=\"${PHTEVENCOIND_DATADIR}\" \
+		-daemon \
+		${PHTEVENCOIND_OPTS}"
+
+required_files="${PHTEVENCOIND_CONFIGFILE}"
+start_stop_daemon_args="-u ${PHTEVENCOIND_USER} \
+			-N ${PHTEVENCOIND_NICE} -w 2000"
+pidfile="${PHTEVENCOIND_PIDFILE}"
+
+# The retry schedule to use when stopping the daemon. Could be either
+# a timeout in seconds or multiple signal/timeout pairs (like
+# "SIGKILL/180 SIGTERM/300")
+retry="${PHTEVENCOIND_SIGTERM_TIMEOUT}"
+
+depend() {
+	need localmount net
+}
+
+# verify
+# 1) that the datadir exists and is writable (or create it)
+# 2) that a directory for the pid exists and is writable
+# 3) ownership and permissions on the config file
+start_pre() {
+	checkpath \
+	-d \
+	--mode 0750 \
+	--owner "${PHTEVENCOIND_USER}:${PHTEVENCOIND_GROUP}" \
+	"${PHTEVENCOIND_DATADIR}"
+
+	checkpath \
+	-d \
+	--mode 0755 \
+	--owner "${PHTEVENCOIND_USER}:${PHTEVENCOIND_GROUP}" \
+	"${PHTEVENCOIND_PIDDIR}"
+
+	checkpath -f \
+	-o ${PHTEVENCOIND_USER}:${PHTEVENCOIND_GROUP} \
+	-m 0660 \
+	${PHTEVENCOIND_CONFIGFILE}
+
+	checkconfig || return 1
+}
+
+checkconfig()
+{
+	if ! grep -qs '^rpcpassword=' "${PHTEVENCOIND_CONFIGFILE}" ; then
+		eerror ""
+		eerror "ERROR: You must set a secure rpcpassword to run phtevencoind."
+		eerror "The setting must appear in ${PHTEVENCOIND_CONFIGFILE}"
+		eerror ""
+		eerror "This password is security critical to securing wallets "
+		eerror "and must not be the same as the rpcuser setting."
+		eerror "You can generate a suitable random password using the following"
+		eerror "command from the shell:"
+		eerror ""
+		eerror "bash -c 'tr -dc a-zA-Z0-9 < /dev/urandom | head -c32 && echo'"
+		eerror ""
+		eerror "It is also recommended that you also set alertnotify so you are "
+		eerror "notified of problems:"
+		eerror ""
+		eerror "ie: alertnotify=echo %%s | mail -s \"Phtevencoin Alert\"" \
+			"admin@foo.com"
+		eerror ""
+		return 1
+	fi
+}
